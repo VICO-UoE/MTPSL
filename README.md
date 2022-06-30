@@ -7,9 +7,9 @@ We propose a more realistic and general setting for multi-task dense prediction 
 </p>
 </div>
 
-> [**Learning Multiple Dense Prediction Tasks from Partially Annotated Data**](https://arxiv.org/pdf/2111.14893),            
+> [**Learning Multiple Dense Prediction Tasks from Partially Annotated Data**](https://arxiv.org/abs/2111.14893),            
 > Wei-Hong Li, Xialei Liu, Hakan Bilen,        
-> *CVPR 2022 ([arXiv 2111.14893](https://arxiv.org/pdf/2111.14893))*
+> *CVPR 2022 ([arXiv 2111.14893](https://arxiv.org/abs/2111.14893))*
 
 ## Updates
 * June'22 The code on NYU-v2 is now released! The rest code will be available soon!
