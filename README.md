@@ -13,7 +13,7 @@ We propose a more realistic and general setting for multi-task dense prediction 
 
 ## Updates
 * June'22 The code on NYU-v2 is now released! The rest code will be available soon!
-* June'22, Our paper is listed in [CVPR'22 Best Paper Finalists](https://twitter.com/CVPR/status/1539772091112857600)
+* June'22, Our paper is listed in [CVPR'22 Best Paper Finalists](https://twitter.com/CVPR/status/1539772091112857600).
 * March'22, Our paper is accepted to CVPR'22!
 
 ## Features at a glance
