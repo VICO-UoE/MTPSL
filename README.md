@@ -12,7 +12,8 @@ We propose a more realistic and general setting for multi-task dense prediction 
 > *CVPR 2022 ([arXiv 2111.14893](https://arxiv.org/abs/2111.14893))*
 
 ## Updates
-* June'22 The code on NYU-v2 is now released! The rest code will be available soon!
+* April'23, Code on Cityscapes is now released! The multi-task partially-supervised learning label split for the PASCAL-context dataset is also released!
+* June'22, The code on NYU-v2 is now released! The rest code will be available soon!
 * June'22, Our paper is listed in [CVPR'22 Best Paper Finalists](https://twitter.com/CVPR/status/1539772091112857600).
 * March'22, Our paper is accepted to CVPR'22!
 
@@ -36,7 +37,7 @@ We propose a more realistic and general setting for multi-task dense prediction 
 - numpy
 
 ## Prepare dataset
-We use the preprocessed [`NYUv2` dataset](https://www.dropbox.com/sh/86nssgwm6hm3vkb/AACrnUQ4GxpdrBbLjb6n-mWNa?dl=0) provided by [this repo](https://github.com/lorenmt/mtan). Download the dataset and place the dataset folder in `./data/`
+We use the preprocessed [`NYUv2` dataset](https://www.dropbox.com/sh/86nssgwm6hm3vkb/AACrnUQ4GxpdrBbLjb6n-mWNa?dl=0) and [`Cityscapes` dataset](https://www.dropbox.com/sh/gaw6vh6qusoyms6/AADwWi0Tp3E3M4B2xzeGlsEna?dl=0) provided by [this repo](https://github.com/lorenmt/mtan). Download the dataset and place the dataset folder in `./data/`
 
 ## Usage
 The easiest way is to download our [pre-trained models](https://drive.google.com/file/d/1s9x8neT9SYR2M6C89CvbeID3XlBRJoEw/view?usp=sharing) learned with our proposed cross-task consistency learning and evaluate it on the validation set. To download the pretrained model, one can use `gdown` (installed by ```pip install gdown```) and execute the following command in the root directory of this project:
@@ -75,6 +76,13 @@ CUDA_VISIBLE_DEVICES=<gpu_id> python nyu_stl_sl.py --out ./results/nyuv2 --ssl-t
 ```
 CUDA_VISIBLE_DEVICES=<gpu-id> python nyu_mtl_sl.py --out ./results/nyuv2 --ssl-type onelabel --dataroot ./data/nyuv2
 ```
+
+### Train on Cityscapes
+Similar to experiments on NYUv2, one may train the STL, MTL, and our method on Cityscapes. For example, to train our method on Cityscapes:
+```
+CUDA_VISIBLE_DEVICES=<gpu_id> python cityscapes_mtl_xtc.py --out ./results/cityscapes2 --ssl-type onelabel --dataroot ./data/cityscapes2 
+```
+Training the provided code on Cityscapes will result different performances than the reported numbers in the paper. But, the rankings stay the same. For comparing models in the paper, please re-run the model with your preferred training strategies (learning rate, optimizer, etc) and keep all training strategies consistent for all compared methods for fair comparison.
 
 ## Acknowledge
 We thank authors of [MTAN](https://github.com/lorenmt/mtan) and [Multi-Task-Learning-PyTorch](https://github.com/SimonVandenhende/Multi-Task-Learning-PyTorch) for their source code.  
