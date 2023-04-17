@@ -20,8 +20,8 @@ class conv_task(nn.Module):
         super(conv_task, self).__init__()
         self.num_tasks = num_tasks
         self.conv = nn.Conv2d(in_channels=in_planes, out_channels=planes, kernel_size=3, padding=1)
-        self.gamma = nn.Parameter(torch.ones(planes, 6))
-        self.beta = nn.Parameter(torch.zeros(planes, 6))
+        self.gamma = nn.Parameter(torch.ones(planes, num_tasks*(num_tasks-1)))
+        self.beta = nn.Parameter(torch.zeros(planes, num_tasks*(num_tasks-1)))
         self.bn = nn.BatchNorm2d(num_features=planes)
         self.relu = nn.ReLU(inplace=True)
     
